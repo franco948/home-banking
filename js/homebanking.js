@@ -31,6 +31,11 @@ function verificarInputDelUsuario(input)
     return true;
 }
 
+function verificarSaldoSuficiente(monto)
+{
+    return saldoCuenta >= monto;
+}
+
 //Declaración de variables
 var nombreUsuario = "Franco Palermo";
 var saldoCuenta = 20000;
@@ -76,7 +81,7 @@ function extraerDinero() {
 
     var montoAExtraer = parseInt(input);
 
-    if (montoAExtraer > saldoCuenta)
+    if (!verificarSaldoSuficiente(montoAExtraer))
     {
         alert('¡No puede extraer más dinero del que posee en la cuenta!');
     }
@@ -186,7 +191,7 @@ function transferirDinero() {
 
     var montoATransferir = parseInt(input);
 
-    if (montoATransferir > saldoCuenta)
+    if (!verificarSaldoSuficiente(montoATransferir))
     {
         alert('¡El monto que desea transferir supera al monto disponible!');
     }
