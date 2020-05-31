@@ -179,7 +179,7 @@ function pagarServicio() {
 
         alert('Has pagado del servicio ' + nombreServicio + '\n' +
             'Saldo anterior: $' + saldoAnterior + '\n' +
-            'Dinero descontado: $' + (saldoAnterior - resultado) + '\n' +
+            'Dinero descontado: $' + (saldoAnterior - saldoCuenta) + '\n' +
             'Saldo actual: $' + saldoCuenta);
     }
 }
@@ -221,7 +221,7 @@ function transferirDinero() {
 
         if (cuentaDestino === null)
         {
-            alert('¡La cuenta ingresa no existe!');
+            alert('¡La cuenta ingresada no existe!');
         }
         else
         {
